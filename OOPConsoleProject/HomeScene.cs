@@ -26,23 +26,36 @@ namespace OOPConsoleProject
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Util.Print("집 안은 사람들에 의해 관리되어 있는 것을 알 수 있었습니다.", ConsoleColor.White, 1000);
-                    Util.Print("부엌에 냉장고는 사람들이 챙겨준 음식들로 가득 차 있었습니다.", ConsoleColor.White, 1000);
-                    Util.Print("집 안은 다 둘러본 당신은 집 밖으로 나갑니다.", ConsoleColor.White, 1000);
-                    Util.Print("아무 키나 눌러 이동하기", ConsoleColor.DarkGray, 500);
+                    Util.Print("집 안은 사람들에 의해 관리되어 있는 것을 알 수 있었습니다.", ConsoleColor.White, 0);
+                    Util.Print("부엌에 냉장고는 사람들이 챙겨준 음식들로 가득 차 있었습니다.", ConsoleColor.White, 0);
+                    Util.Print("집 안은 다 둘러본 당신은 집 밖으로 나갑니다.", ConsoleColor.White, 0);
+                    Util.Print("아무 키나 눌러 이동하기", ConsoleColor.DarkGray, 0);
                     Console.ReadKey(true);
                     Result();
                     break;
                 case ConsoleKey.D2:
                     Result();
                     break;
+                default:
+                    Console.WriteLine("올바른 숫자를 입력해주세요.");
+                    break;
             }
         }
 
         public override void Result()
         {
-            Console.WriteLine("집 밖, 마을로 이동합니다.");
-            Game.ChangeScene("Town");
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Console.WriteLine("집 밖, 마을로 이동합니다.");
+                    Game.ChangeScene("Town");
+                    break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("집 밖, 마을로 이동합니다.");
+                    Game.ChangeScene("Town");
+                    break;
+            }
+            
         }
 
     }
