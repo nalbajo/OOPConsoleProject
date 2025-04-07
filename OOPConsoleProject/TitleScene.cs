@@ -6,24 +6,23 @@
         {
             Console.WriteLine("******************************");
             Console.WriteLine("*                            *");
-            Console.WriteLine("*        마을을 지켜요       *");
+            Console.WriteLine("*       마을의 용사에요      *");
             Console.WriteLine("*                            *");
             Console.WriteLine("******************************");
             Console.WriteLine("");
-            Console.WriteLine("아무 키나 눌러 시작하세요!");
+            Console.WriteLine("▶ 아무 키나 눌러 시작하세요!");
         }
+        protected ConsoleKey input;
         public override void Input()
         {
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
+        public override void Update() { }
         public override void Result()
         {
-            throw new NotImplementedException();
+            Game.ChangeScene("Story");
         }
 
-        public override void Update()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

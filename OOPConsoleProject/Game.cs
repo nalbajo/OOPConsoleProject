@@ -14,12 +14,27 @@ namespace OOPConsoleProject
 
         public static bool gameOver;
 
+        public static void Start()
+        {
+            gameOver = false;
+
+            sceneDic = new Dictionary<string, Scene>();
+            sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Story", new StoryScene());
+            sceneDic.Add("Home", new HomeScene());
+            sceneDic.Add("Town", new TownScene());
+
+            curScene = sceneDic["Title"];
+
+            Console.CursorVisible = false;
+        }
         public static void Run()
         {
             Start();
 
             while(gameOver == false)
             {
+                Console.Clear();
                 curScene.Render();
                 curScene.Input();
                 curScene.Update();
@@ -29,19 +44,15 @@ namespace OOPConsoleProject
             End();
         }
 
-        private static void Start()
+
+        public static void ChangeScene(string sceneName)
         {
-            gameOver = false;
-
-            sceneDic = new Dictionary<string, Scene>();
-            sceneDic.Add("Title",new TitleScene());
-
-            curScene = sceneDic["Title"];
+            curScene = sceneDic[sceneName];
         }
 
         
 
-        private static void End()
+        public static void End()
         {
 
         }
