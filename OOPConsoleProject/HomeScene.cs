@@ -12,6 +12,7 @@ namespace OOPConsoleProject
         {
             Util.Print("사람들의 호의로 많은 선물들과",ConsoleColor.White,1000);
             Util.Print("따뜻한 온기가 있는 집입니다.", ConsoleColor.White,1000);
+            Console.WriteLine();
             Console.WriteLine("1. 집 안을 둘러본다.");
             Console.WriteLine("2. 집 밖으로 나간다.");
             Util.Print("숫자 키를 눌러 이동하기",ConsoleColor.DarkGray, 500);
@@ -47,10 +48,12 @@ namespace OOPConsoleProject
             switch (input)
             {
                 case ConsoleKey.D1:
+                    Console.WriteLine();
                     Console.WriteLine("집 밖, 마을로 이동합니다.");
                     Game.ChangeScene("Town");
                     break;
                 case ConsoleKey.D2:
+                    Console.WriteLine();
                     Console.WriteLine("집 밖, 마을로 이동합니다.");
                     Game.ChangeScene("Town");
                     break;
