@@ -9,8 +9,8 @@
             Console.WriteLine("*       마을의 용사에요      *");
             Console.WriteLine("*                            *");
             Console.WriteLine("******************************");
-            Console.WriteLine("");
-            Console.WriteLine("▶ 아무 키나 눌러 시작하세요!");
+            Util.Print("",ConsoleColor.White, 1000);
+            Util.Print("▶ 아무 키나 눌러 시작하세요!",ConsoleColor.White, 1000);
         }
         protected ConsoleKey input;
         public override void Input()
