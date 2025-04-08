@@ -58,6 +58,8 @@ namespace OOPConsoleProject
                 case ConsoleKey.D3:
                     Console.WriteLine();
                     Console.WriteLine("상점 밖으로 나갑니다.");
+                    Util.Print("▶ 아무 키나 눌러 계속하기", ConsoleColor.DarkGray, 0);
+                    Console.ReadKey(true);
                     break;
                 default:
                     Console.WriteLine("올바른 숫자를 입력해주세요.");

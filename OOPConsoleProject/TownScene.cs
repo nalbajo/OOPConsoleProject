@@ -47,11 +47,16 @@
                     {
                         case ConsoleKey.D1:
                             Console.WriteLine("마을 밖, 숲으로 나갑니다.");
+                            Util.Print("▶ 아무 키나 눌러 계속하기", ConsoleColor.DarkGray, 0);
+                            Console.ReadKey(true);
                             Game.ChangeScene("Forest");
+
                             break;
                         case ConsoleKey.D2:
                             Console.WriteLine("마을 안에는 상점이 있습니다.");
                             Console.WriteLine("상점으로 들어갑니다.");
+                            Util.Print("▶ 아무 키나 눌러 계속하기", ConsoleColor.DarkGray, 0);
+                            Console.ReadKey(true);
                             Game.ChangeScene("Store");
                             break;
                         default:

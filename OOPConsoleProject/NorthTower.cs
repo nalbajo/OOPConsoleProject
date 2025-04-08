@@ -24,6 +24,7 @@ namespace OOPConsoleProject
             Console.WriteLine("북쪽 탑에 도착했습니다.");
             Console.WriteLine();
             Console.WriteLine("북쪽 탑의 자태가 구름 뚫고 올라갑니다.");
+            Console.WriteLine();
             Util.Print("▶ 아무 키나 눌러 넘어가기", ConsoleColor.White, 2000);
         }
 
@@ -32,7 +33,10 @@ namespace OOPConsoleProject
         {
             input = Console.ReadKey(true).Key;
         }
-        public override void Update() { }
+        public override void Update() 
+        {
+            Console.WriteLine("지상 1층으로 갑니다.");
+        }
         public override void Result()
         {
             Game.ChangeScene("Floor1");

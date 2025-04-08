@@ -32,6 +32,8 @@ namespace OOPConsoleProject
 
             sceneDic.Add("Floor1", new Floor1());
 
+            sceneDic.Add("FloorB1", new FloorB1());
+
             curScene = sceneDic["Title"];
 
             Console.CursorVisible = false;
