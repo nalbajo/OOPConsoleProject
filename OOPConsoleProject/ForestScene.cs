@@ -18,6 +18,7 @@ namespace OOPConsoleProject
             Console.WriteLine("1. 북쪽 탑으로 가기");
             Console.WriteLine("2. 숲 깊은 곳으로 가기");
             Console.WriteLine("3. 남쪽 탑으로 가기");
+            Console.WriteLine("4. 마을로 돌아가기");
         }
         protected ConsoleKey input;
         public override void Input()
@@ -33,6 +34,9 @@ namespace OOPConsoleProject
                 case ConsoleKey.D2:
                     break;
                 case ConsoleKey.D3:
+                    break;
+                case ConsoleKey.D4:
+                    Game.ChangeScene("Town1");
                     break;
                 default:
                     Console.WriteLine("올바른 숫자를 입력해주세요.");
