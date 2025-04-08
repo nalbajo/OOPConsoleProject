@@ -25,15 +25,19 @@
             {
                 case ConsoleKey.D1:
                     Console.WriteLine("북쪽 탑으로 이동합니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("숲 안쪽으로 들어갑니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("남쪽 던전으로 이동합니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 case ConsoleKey.D4:
                     Console.WriteLine("마을로 돌아갑니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 default:
                     Console.WriteLine("올바른 숫자를 입력해주세요.");

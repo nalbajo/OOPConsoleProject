@@ -29,12 +29,15 @@ namespace OOPConsoleProject
             {
                 case ConsoleKey.D1:
                     Console.WriteLine("집으로 이동합니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("상점으로 이동합니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("마을 밖, 숲으로 이동합니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 default:
                     Console.WriteLine("올바른 숫자를 입력해주세요.");
@@ -49,10 +52,10 @@ namespace OOPConsoleProject
                     Game.ChangeScene("Home1");
                     break;
                 case ConsoleKey.D2:
-                    Console.WriteLine("Store1");
+                    Game.ChangeScene("Store1");
                     break;
                 case ConsoleKey.D3:
-                    Console.WriteLine("Forest");
+                    Game.ChangeScene("Forest");
                     break;
                 default:
                     Console.WriteLine("올바른 숫자를 입력해주세요.");
