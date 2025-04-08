@@ -16,6 +16,7 @@ namespace OOPConsoleProject
             Console.WriteLine("1. 집 안을 둘러본다.");
             Console.WriteLine("2. 집 밖으로 나간다.");
             Util.Print("숫자 키를 눌러 이동하기",ConsoleColor.DarkGray, 500);
+            Console.WriteLine();
         }
         protected ConsoleKey input;
         public override void Input()

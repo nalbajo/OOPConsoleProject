@@ -39,6 +39,7 @@ namespace OOPConsoleProject
                     Util.Print("당신은 무슨 말인지 이해하지 못합니다.", ConsoleColor.White, 500);
                     Console.WriteLine();
                     Util.Print("키를 눌러 다시 고르기",ConsoleColor.DarkGray, 0);
+                    Console.WriteLine();
                     input = Console.ReadKey(true).Key;
                     break;
                 case ConsoleKey.D2:

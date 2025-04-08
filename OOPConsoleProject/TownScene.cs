@@ -27,7 +27,8 @@
                     Console.WriteLine("당신에게 말을 걸어온 사람은");
                     Console.WriteLine("마을에서 당신을 가장 좋아하는 아이였습니다.");
                     Console.WriteLine("아이는 당신의 손에 꼬깃꼬깃한 종이를 쥐어줍니다.");
-                    Util.Print("종이에 적힌 내용은",ConsoleColor.White,500);
+                    Util.Print("", ConsoleColor.White, 2000);
+                    Console.WriteLine("종이에 적힌 내용은");
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("하루가 가기전에 북쪽 탑과 남쪽 탑을 한 층씩 꼭 클리어");
                     Console.ResetColor();
@@ -42,6 +43,7 @@
                     Console.WriteLine();
                     Console.WriteLine("1. 마을 밖으로 이동한다.");
                     Console.WriteLine("2. 마을 안을 둘러본다.");
+                    Console.WriteLine();
                     ConsoleKey input2 = Console.ReadKey(true).Key;
                     switch (input2)
                     {

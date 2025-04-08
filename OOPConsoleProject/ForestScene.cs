@@ -13,6 +13,9 @@
             Console.WriteLine("2. 숲 깊은 곳으로 가기");
             Console.WriteLine("3. 남쪽 던전으로 가기");
             Console.WriteLine("4. 마을로 돌아가기");
+            Console.WriteLine();
+            Util.Print("숫자 키를 눌러 이동하기", ConsoleColor.DarkGray, 0);
+            Console.WriteLine();
         }
         protected ConsoleKey input;
         public override void Input()

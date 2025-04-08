@@ -14,7 +14,7 @@ namespace OOPConsoleProject
             Util.Print("당신은 이 게임에서 두 가지를 선택 할 수 있습니다.", ConsoleColor.White, 2000);
             Util.Print("이미 사람들의 인정을 받고 있는 당신은", ConsoleColor.White, 2000);
             Util.Print("마을에서만 마음 편안히 있을 수 있고", ConsoleColor.White, 2000);
-            Util.Print("마을 밖으로 나가 탑을 탐험 할 수 있습니다.", ConsoleColor.White, 2000);
+            Util.Print("마을 밖으로 나가 숲을 탐험 할 수 있습니다.", ConsoleColor.White, 2000);
             Util.Print("당신이 어떤 선택을 하든", ConsoleColor.White, 2000);
             Util.Print("책임은 당신에게 있습니다.", ConsoleColor.Yellow, 2000);
             Util.Print("", ConsoleColor.White, 500);
