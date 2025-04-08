@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleProject
+﻿namespace OOPConsoleProject
 {
     public class NorthTower : Scene
     {
-        
-
-        
         public override void Render()
         {
             Console.WriteLine("******************************");
@@ -38,20 +29,23 @@ namespace OOPConsoleProject
         {
             input = Console.ReadKey(true).Key;
         }
-        public override void Update() 
+        public override void Update()
         {
             switch (input)
             {
                 case ConsoleKey.D1:
-                        Console.WriteLine("탑을 오릅니다.");
-                        Util.Print("", ConsoleColor.White, 1000);
+                    Console.WriteLine("탑을 오릅니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("숲으로 돌아갑니다.");
                     Util.Print("", ConsoleColor.White, 1000);
                     break;
+                default:
+                    Console.WriteLine("올바른 숫자를 입력해주세요.");
+                    break;
             }
-            
+
         }
         public override void Result()
         {
@@ -64,7 +58,7 @@ namespace OOPConsoleProject
                     Game.ChangeScene("Forest");
                     break;
             }
-            
+
         }
     }
 }

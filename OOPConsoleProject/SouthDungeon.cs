@@ -28,12 +28,32 @@
         }
         public override void Update()
         {
-            Console.WriteLine("지하 1층으로 내려갑니다.");
-            Util.Print("", ConsoleColor.White, 1000);
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Console.WriteLine("던전을 내려갑니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
+                    break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("숲으로 돌아갑니다.");
+                    Util.Print("", ConsoleColor.White, 1000);
+                    break;
+                default:
+                    Console.WriteLine("올바른 숫자를 입력해주세요.");
+                    break;
+            }
         }
         public override void Result()
         {
-            Game.ChangeScene("FloorB1");
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("FloorB1");
+                    break;
+                case ConsoleKey.D2:
+                    Game.ChangeScene("Forest");
+                    break;
+            }
         }
     }
 }

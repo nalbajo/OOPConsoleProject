@@ -15,7 +15,7 @@
             }
             else
             {
-                Console.WriteLine("탑 1층입니다.");
+                Console.WriteLine("탑 지상 1층입니다.");
                 Console.WriteLine("퍼즐의 방입니다. 문제를 보고 풀어내면 됩니다.");
                 Console.WriteLine();
                 Console.WriteLine("◀ △ ▼ ▶ ◁ ▲ △");
