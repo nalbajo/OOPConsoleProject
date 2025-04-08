@@ -29,7 +29,7 @@
                     Console.WriteLine("아이는 당신의 손에 꼬깃꼬깃한 종이를 쥐어줍니다.");
                     Console.WriteLine("종이에 적힌 내용은");
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("북쪽 탑과 남쪽 탑을 한 층씩 꼭 클리어");
+                    Console.Write("하루가 가기전에 북쪽 탑과 남쪽 탑을 한 층씩 꼭 클리어");
                     Console.ResetColor();
                     Console.WriteLine("해달라는 것이었습니다.");
                     Console.WriteLine("종이를 본 당신은 마을 밖, 숲으로 나갑니다.");

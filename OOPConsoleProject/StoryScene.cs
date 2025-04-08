@@ -31,9 +31,6 @@ namespace OOPConsoleProject
             Game.ChangeScene("Home");
         }
 
-        public override void Update()
-        {
-            
-        }
+        public override void Update() { }
     }
 }

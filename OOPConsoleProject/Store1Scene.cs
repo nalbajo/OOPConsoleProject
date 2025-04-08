@@ -26,7 +26,7 @@ namespace OOPConsoleProject
         }
         public override void Update()
         {
-
+            //todo : 돈이 있다면 구매
         }
         public override void Result()
         {

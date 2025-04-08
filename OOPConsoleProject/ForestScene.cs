@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleProject
+﻿namespace OOPConsoleProject
 {
     public class ForestScene : Scene
     {
@@ -17,7 +11,7 @@ namespace OOPConsoleProject
             Console.WriteLine();
             Console.WriteLine("1. 북쪽 탑으로 가기");
             Console.WriteLine("2. 숲 깊은 곳으로 가기");
-            Console.WriteLine("3. 남쪽 탑으로 가기");
+            Console.WriteLine("3. 남쪽 던전으로 가기");
             Console.WriteLine("4. 마을로 돌아가기");
         }
         protected ConsoleKey input;
@@ -30,13 +24,16 @@ namespace OOPConsoleProject
             switch (input)
             {
                 case ConsoleKey.D1:
+                    Console.WriteLine("북쪽 탑으로 이동합니다.");
                     break;
                 case ConsoleKey.D2:
+                    Console.WriteLine("숲 안쪽으로 들어갑니다.");
                     break;
                 case ConsoleKey.D3:
+                    Console.WriteLine("남쪽 던전으로 이동합니다.");
                     break;
                 case ConsoleKey.D4:
-                    Game.ChangeScene("Town1");
+                    Console.WriteLine("마을로 돌아갑니다.");
                     break;
                 default:
                     Console.WriteLine("올바른 숫자를 입력해주세요.");
@@ -46,7 +43,21 @@ namespace OOPConsoleProject
 
         public override void Result()
         {
-            
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("NorthTower");
+                    break;
+                case ConsoleKey.D2:
+                    //Todo : 숲 안쪽으로 전환
+                    break;
+                case ConsoleKey.D3:
+                    Game.ChangeScene("SouthDungeon");
+                    break;
+                case ConsoleKey.D4:
+                    Game.ChangeScene("Town1");
+                    break;
+            }
         }
 
 

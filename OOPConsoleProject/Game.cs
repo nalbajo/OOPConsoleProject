@@ -27,6 +27,10 @@ namespace OOPConsoleProject
             sceneDic.Add("Store",new StoreScene());
             sceneDic.Add("Store1", new Store1Scene());
             sceneDic.Add("Forest",new ForestScene());
+            sceneDic.Add("NorthTower", new NorthTower());
+            sceneDic.Add("SouthDungeon", new SouthDungeon());
+
+            sceneDic.Add("Floor1", new Floor1());
 
             curScene = sceneDic["Title"];
 
