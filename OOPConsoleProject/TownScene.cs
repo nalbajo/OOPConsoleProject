@@ -27,12 +27,14 @@
                     Console.WriteLine("당신에게 말을 걸어온 사람은");
                     Console.WriteLine("마을에서 당신을 가장 좋아하는 아이였습니다.");
                     Console.WriteLine("아이는 당신의 손에 꼬깃꼬깃한 종이를 쥐어줍니다.");
-                    Console.WriteLine("종이에 적힌 내용은");
+                    Util.Print("종이에 적힌 내용은",ConsoleColor.White,500);
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("하루가 가기전에 북쪽 탑과 남쪽 탑을 한 층씩 꼭 클리어");
                     Console.ResetColor();
                     Console.WriteLine("해달라는 것이었습니다.");
                     Console.WriteLine("종이를 본 당신은 마을 밖, 숲으로 나갑니다.");
+                    Util.Print("▶ 아무 키나 눌러 넘어가기", ConsoleColor.DarkGray, 1000);
+                    Console.ReadKey(true);
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("아이가 손을 꼬옥 쥔 채 당신을 올려다봅니다.");
