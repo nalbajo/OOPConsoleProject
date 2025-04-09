@@ -12,8 +12,8 @@ namespace OOPConsoleProject
         private static Dictionary<string, Scene> sceneDic;   // 씬 관리
         private static Scene curScene;                       // 진행 중인 씬
 
-        private static PlayerPos playerPos;
-        public static PlayerPos PlayerPos { get { return playerPos; } }
+        private static Player player;
+        public static Player Player { get { return player; } }
 
         public static bool gameOver;
 
@@ -23,7 +23,7 @@ namespace OOPConsoleProject
             gameOver = false;
 
             // 플레이어
-            playerPos = new PlayerPos();
+            player = new Player();
 
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());

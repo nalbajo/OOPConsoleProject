@@ -34,16 +34,17 @@ namespace OOPConsoleProject
             map = new bool[10, 10];
             for (int y = 0; y < map.GetLength(0); y++)
             {
-                for (int x = 0; x < map.GetLength(0); x++)
+                for (int x = 0; x < map.GetLength(1); x++)
                 {
                     map[y, x] = mapData[y][x] == '#' ? false : true;
                 }
             }
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Forest", 'F', new Vector2(1, 1)));
+            gameObjects.Add(new Potion(new Vector2(5,5)));
 
-            Game.PlayerPos.position = new Vector2(1, 1);
-            Game.PlayerPos.map = map;
+            Game.Player.position = new Vector2(1, 1);
+            Game.Player.map = map;
         }
 
         public override void Render()
@@ -53,7 +54,10 @@ namespace OOPConsoleProject
             {
                 go.Print();
             }
-            Game.PlayerPos.Print();
+            Game.Player.Print();
+
+            Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            Game.Player.Inventory.PrintAll();
         }
 
         public override void Input()
@@ -65,16 +69,21 @@ namespace OOPConsoleProject
 
         public override void Update()
         {
-            Game.PlayerPos.Move(input);
+            Game.Player.Action(input);
         }
         
         public override void Result()
         {
             foreach(GameObject go in gameObjects)
             {
-                if(Game.PlayerPos.position == go.position)
+                if(Game.Player.position == go.position)
                 {
-                    go.Interact(Game.PlayerPos);
+                    go.Interact(Game.Player);
+                    if(go.isOnce == true)
+                    {
+                        gameObjects.Remove(go);
+                    }
+                    break;
                 }
             }
         }
@@ -84,7 +93,7 @@ namespace OOPConsoleProject
 
             for (int y = 0; y < map.GetLength(0); y++)
             {
-                for (int x = 0; x < map.GetLength(0); x++)
+                for (int x = 0; x < map.GetLength(1); x++)
                 {
                     if (map[y, x] == true)
                     {

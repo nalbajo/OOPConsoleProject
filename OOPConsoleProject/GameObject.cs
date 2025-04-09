@@ -11,12 +11,15 @@ namespace OOPConsoleProject
         public ConsoleColor color;
         public char symbol;
         public Vector2 position;
+        public bool isOnce;
 
-        public GameObject(ConsoleColor color, char symbol, Vector2 position)
+
+        public GameObject(ConsoleColor color, char symbol, Vector2 position, bool isOnce)
         {
             this.color = color;
             this.symbol = symbol;
             this.position = position;
+            this.isOnce = isOnce;
         }
 
         public void Print()
@@ -27,7 +30,7 @@ namespace OOPConsoleProject
             Console.ResetColor();
         }
 
-        public abstract void Interact(PlayerPos playerPos);
+        public abstract void Interact(Player player);
 
 
     }

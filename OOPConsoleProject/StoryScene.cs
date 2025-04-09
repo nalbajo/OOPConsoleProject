@@ -18,7 +18,7 @@ namespace OOPConsoleProject
             Util.Print("당신이 어떤 선택을 하든", ConsoleColor.White, 2000);
             Util.Print("책임은 당신에게 있습니다.", ConsoleColor.Yellow, 2000);
             Util.Print("", ConsoleColor.White, 500);
-            Util.Print("▶ 아무 키나 눌러 넘어가기", ConsoleColor.White, 2000);
+            Util.Print("▶ 아무 키나 눌러 넘어가기", ConsoleColor.White, 0);
         }
         protected ConsoleKey input;
         public override void Input()
