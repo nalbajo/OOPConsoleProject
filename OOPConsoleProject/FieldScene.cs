@@ -70,7 +70,13 @@ namespace OOPConsoleProject
         
         public override void Result()
         {
-
+            foreach(GameObject go in gameObjects)
+            {
+                if(Game.PlayerPos.position == go.position)
+                {
+                    go.Interact(Game.PlayerPos);
+                }
+            }
         }
         private void PrintMap()
         {
