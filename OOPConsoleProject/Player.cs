@@ -23,6 +23,9 @@ namespace OOPConsoleProject
         private int power;
         public int Power { get { return power; } set { power = value; } }
 
+        public int gold;
+        public int Gold { get { return gold; } set { gold = value; } }
+
         public Player()
         {
             inventory = new Inventory();

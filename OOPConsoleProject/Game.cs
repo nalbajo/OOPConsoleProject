@@ -24,6 +24,8 @@ namespace OOPConsoleProject
 
             // 플레이어
             player = new Player();
+            player.Power = 1;
+            player.Gold = 0;
 
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
@@ -51,6 +53,14 @@ namespace OOPConsoleProject
             curScene = sceneDic["Title"];
 
             Console.CursorVisible = false;
+        }
+
+        public static void PrintInfo()
+        {
+            Console.WriteLine("******************************");
+            Console.WriteLine("* 플레이어                   *");
+            Console.WriteLine("* 힘 : {0}   소지금액 : {1}G *", player.Power, player.Gold);
+            Console.WriteLine("******************************");
         }
         public static void Run()
         {

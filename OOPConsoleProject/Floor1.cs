@@ -18,8 +18,12 @@
                 Console.WriteLine("탑 지상 1층입니다.");
                 Console.WriteLine("퍼즐의 방입니다. 문제를 보고 풀어내면 됩니다.");
                 Console.WriteLine();
-                Console.WriteLine("◀ △ ▼ ▶ ◁ ▲ △");
+                Console.WriteLine("*********************");
+                Console.WriteLine("*   ◀ △ ▼ ▶ ◁ ▲ △   *");
+                Console.WriteLine("*********************");
                 Console.WriteLine("채워진 곳은 곧장가고 빈 곳은 반대로 돌아가라.");
+                Console.WriteLine();
+                Console.WriteLine("나가고 싶다면 BackSpace를 누르세요.");
             }
         }
         protected ConsoleKey input;
@@ -121,6 +125,9 @@
                             Console.WriteLine("틀렸습니다. 다시 입력하세요.");
                             break;
                     }
+                    break;
+                case ConsoleKey.Backspace:
+                    Game.ChangeScene("Forest");
                     break;
                 default:
                     Console.WriteLine("틀렸습니다. 다시 입력하세요.");
