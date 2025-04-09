@@ -10,6 +10,7 @@ namespace OOPConsoleProject
     {
         private List<Item> items;
         private Stack<string> stack;
+        private int selectIndex;
 
         public Inventory()
         {
@@ -41,13 +42,11 @@ namespace OOPConsoleProject
                 Console.Clear();
                 switch (stack.Peek())
                 {
-                    case "Menu":        Menu();      break;
-                    case "UseMenu":     UseMenu();   break;
-                    case "DropMenu":    DropMenu();  break;
-                    case "UseConfirm":               
-                        break;
-                    case "DropConfirm":
-                        break;
+                    case "Menu":         Menu();         break;
+                    case "UseMenu":      UseMenu();      break;
+                    case "DropMenu":     DropMenu();     break;
+                    case "UseConfirm":   UseConfirm();   break;
+                    case "DropConfirm":  DropConfirm();  break;
                 }
             }
         }
@@ -60,6 +59,7 @@ namespace OOPConsoleProject
             Console.WriteLine("0. 뒤로가기");
 
             ConsoleKey input = Console.ReadKey(true).Key;
+
             switch (input)
             {
                 case ConsoleKey.D1:
@@ -80,12 +80,25 @@ namespace OOPConsoleProject
             Console.WriteLine("사용할 아이템을 선택해주세요.");
             Console.WriteLine("뒤로가기는 0");
 
+
             ConsoleKey input = Console.ReadKey(true).Key;
-            switch (input)
+            if (input == ConsoleKey.D0)
             {
-                case ConsoleKey.D0:
-                    stack.Pop();
-                    break;
+                stack.Pop();
+            }
+            else
+            {
+                int select = (int)input - (int)ConsoleKey.D1;
+                if (select < 0 || items.Count <=  select)
+                {
+                    Console.WriteLine("범위 내의 아이템을 선택하세요.");
+                    input = Console.ReadKey(true).Key;
+                }
+                else
+                {
+                    selectIndex = select;
+                    stack.Push("UseConfirm");
+                }
             }
         }
 
@@ -105,12 +118,55 @@ namespace OOPConsoleProject
             }
         }
 
+        private void UseConfirm()
+        {
+            Item selectItem = items[selectIndex];
+            Console.WriteLine("{0} 을/를 사용하시겠습니까? (y/n)", selectItem.name);
+
+            ConsoleKey input = Console.ReadKey(true).Key;
+            switch (input)
+            {
+                case ConsoleKey.Y:
+                    selectItem.Use();
+                    Console.WriteLine("{0} 을/를 사용했습니다.", selectItem.name);
+                    Remove(selectItem);
+                    Util.Print("▶ 아무 키나 눌러 계속하기", ConsoleColor.DarkGray, 0);
+                    Console.ReadKey(true);
+                    stack.Pop();
+                    break;
+                case ConsoleKey.N:
+                    stack.Pop();
+                    break;
+            }
+        }
+
+        private void DropConfirm()
+        {
+            Item selectItem = items[selectIndex];
+            Console.WriteLine("{0} 을/를 버리시겠습니까? (y/n)", selectItem.name);
+
+            ConsoleKey input = Console.ReadKey(true).Key;
+            switch (input)
+            {
+                case ConsoleKey.Y:
+                    Console.WriteLine("{0} 을/를 버렸습니다.", selectItem.name);
+                    Remove(selectItem);
+                    Util.Print("▶ 아무 키나 눌러 계속하기", ConsoleColor.DarkGray, 0);
+                    Console.ReadKey(true);
+                    stack.Pop();
+                    break;
+                case ConsoleKey.N:
+                    stack.Pop();
+                    break;
+            }
+        }
+
         public void PrintAll()
         {
             Console.WriteLine("======소유한 아이템======");
             if (items.Count == 0)
             {
-                Console.WriteLine("           없음");
+                Console.WriteLine("          없음");
             }
             for (int i = 0; i < items.Count; i++ )
             {
