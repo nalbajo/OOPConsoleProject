@@ -12,11 +12,18 @@ namespace OOPConsoleProject
         private static Dictionary<string, Scene> sceneDic;   // 씬 관리
         private static Scene curScene;                       // 진행 중인 씬
 
+        private static PlayerPos playerPos;
+        public static PlayerPos PlayerPos { get { return playerPos; } }
+
         public static bool gameOver;
 
         public static void Start()
         {
+            Console.CursorVisible = false;
             gameOver = false;
+
+            // 플레이어
+            playerPos = new PlayerPos();
 
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
@@ -26,13 +33,20 @@ namespace OOPConsoleProject
             sceneDic.Add("Town1", new Town1Scene());
             sceneDic.Add("Store",new StoreScene());
             sceneDic.Add("Store1", new Store1Scene());
-            sceneDic.Add("Forest",new ForestScene());
-            sceneDic.Add("NorthTower", new NorthTower());
-            sceneDic.Add("SouthDungeon", new SouthDungeon());
 
+            // 숲
+            sceneDic.Add("Forest", new ForestScene());
+            sceneDic.Add("Field", new FieldScene());
+
+            // 탑
+            sceneDic.Add("NorthTower", new NorthTower());
             sceneDic.Add("Floor1", new Floor1());
 
+            // 던전
+            sceneDic.Add("SouthDungeon", new SouthDungeon());
             sceneDic.Add("FloorB1", new FloorB1());
+
+
 
             curScene = sceneDic["Title"];
 

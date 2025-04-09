@@ -56,7 +56,7 @@
                     Game.ChangeScene("NorthTower");
                     break;
                 case ConsoleKey.D2:
-                    //Todo : 숲 안쪽으로 전환
+                    Game.ChangeScene("Field");
                     break;
                 case ConsoleKey.D3:
                     Game.ChangeScene("SouthDungeon");
