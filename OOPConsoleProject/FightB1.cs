@@ -56,7 +56,7 @@
                         Console.WriteLine("슬라임을 잡았습니다.");
                         Util.Print("▶ 아무 키나 눌러 계속하기", ConsoleColor.DarkGray, 0);
                         Console.ReadKey(true);
-                        SouthDungeonFloorB1 = true;
+                        SouthDungeonFloorB1 = true;     // 참조 어떻게..?
                         Game.ChangeScene("FloorB1");
                     }
                     else

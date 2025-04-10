@@ -42,6 +42,7 @@ namespace OOPConsoleProject
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Forest", 'F', new Vector2(1, 1)));
             gameObjects.Add(new Potion(new Vector2(5,5)));
+            gameObjects.Add(new Coin5(new Vector2(2, 7)));
 
             Game.Player.position = new Vector2(1, 1);
             Game.Player.map = map;
@@ -57,6 +58,7 @@ namespace OOPConsoleProject
             Game.Player.Print();
 
             Console.SetCursorPosition(0, map.GetLength(0) + 2);
+            Game.PrintInfo();
             Game.Player.Inventory.PrintAll();
         }
 
