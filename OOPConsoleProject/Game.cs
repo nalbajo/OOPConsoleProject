@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,17 @@ namespace OOPConsoleProject
         private static Dictionary<string, Scene> sceneDic;   // 씬 관리
         private static Scene curScene;                       // 진행 중인 씬
 
-        private static Player player;
+        public static Player player;
         public static Player Player { get { return player; } }
 
         public static bool gameOver;
 
+        public static Slime slime;
+        public static Slime Slime {get{ return slime; }}
         public static void Start()
         {
             Console.CursorVisible = false;
             gameOver = false;
-
             // 플레이어
             player = new Player();
             player.Power = 1;
@@ -46,6 +48,7 @@ namespace OOPConsoleProject
 
             // 던전
             sceneDic.Add("SouthDungeon", new SouthDungeon());
+            sceneDic.Add("FightB1", new FightB1());
             sceneDic.Add("FloorB1", new FloorB1());
 
 

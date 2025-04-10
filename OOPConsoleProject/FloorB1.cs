@@ -9,6 +9,7 @@ namespace OOPConsoleProject
 {
     public class FloorB1 : Scene
     {
+        public bool SouthDungeonFloorB1;
         private ConsoleKey input;
        
         private string[] mapData;
@@ -41,26 +42,35 @@ namespace OOPConsoleProject
             }
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("Forest", 'F', new Vector2(1, 1)));
-            gameObjects.Add(new Slime(new Vector2(8,8)));
+            gameObjects.Add(new Slime(new Vector2(5, 7)));
 
             Game.Player.position = new Vector2(1, 1);
             Game.Player.map = map;
         }
         public override void Render()
         {
-            PrintMap();
-            Console.WriteLine("던전 지하 1층입니다.");
-            foreach (GameObject go in gameObjects)
+            if (SouthDungeonFloorB1 == true)
             {
-                go.Print();
+                Console.WriteLine("지하 2층으로 갑니다.");
+                Util.Print("", ConsoleColor.White, 1000);
+                Game.ChangeScene("FloorB2");
             }
-            Game.Player.Print();
+            else
+            {
+                PrintMap();
+                Console.WriteLine("던전 지하 1층입니다.");
+                foreach (GameObject go in gameObjects)
+                {
+                    go.Print();
+                }
+                Game.Player.Print();
 
-            Console.SetCursorPosition(0, map.GetLength(0) + 2);
+                Console.SetCursorPosition(0, map.GetLength(0) + 2);
 
-            Game.PrintInfo();
-
-            Game.Player.Inventory.PrintAll();
+                Game.PrintInfo();
+                Console.WriteLine();
+                Game.Player.Inventory.PrintAll();
+            }
         }
 
         public override void Input()
