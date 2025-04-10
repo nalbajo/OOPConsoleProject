@@ -41,6 +41,10 @@ namespace OOPConsoleProject
                 curHP = maxHP;
             }
         }
+        public void equip(int power)
+        {
+            Game.player.Power += power;
+        }
 
         public void Print() // 플레이어 출력
         {
